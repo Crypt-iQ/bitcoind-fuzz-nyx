@@ -17,5 +17,6 @@ as these tests have more access to internal bitcoind state. Each approach has it
 advantages and disadvantages. The advantage with the approach in this repo is
 that we can fuzz internal state in Core better and still use snapshot fuzzing for
 expensive setup. The downside is that we pollute Core a bit more with yet another
-fuzzing engine and we have to modify it rather than externally testing it. Each
-approach fills its niche.
+fuzzing engine and we have to modify it rather than externally testing it.
+
+Credit: This is mostly Niklas' code and I am simply packaging it for my own use.
