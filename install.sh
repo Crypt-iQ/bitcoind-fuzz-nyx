@@ -27,7 +27,7 @@ rm -r /tmp/out
 
 # Create and populate the share directory.
 mkdir /tmp/fuzzsharedir
-python3 ./create_sharedir.py --dir=/tmp/fuzzsharedir --target=cmpctblock --binary=build_fuzz/bin/fuzz
+(cd src && python3 ./create_sharedir.py --dir=/tmp/fuzzsharedir --target=cmpctblock --binary=build_fuzz/bin/fuzz)
 
 # Build nyx tools
 # TODO: Currently the script assumes nyx tools are built.
