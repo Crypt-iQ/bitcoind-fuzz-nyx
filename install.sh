@@ -19,7 +19,7 @@ export CXX=
 export LD=
 
 # Create nyx_bitcoin_agent.so
-clang-$4 -fPIC -D_GNU_SOURCE -DNO_PT_NYX agent.c -ldl -I. -shared -o nyx_bitcoin_agent.so
+(cd src && clang-$4 -fPIC -D_GNU_SOURCE -DNO_PT_NYX agent.c -ldl -I. -shared -o nyx_bitcoin_agent.so)
 
 # Remove polluted directories so we don't prematurely fail.
 rm -r /tmp/fuzzsharedir
