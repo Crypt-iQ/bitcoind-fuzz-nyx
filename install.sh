@@ -22,12 +22,12 @@ export LD=
 (cd src && clang-$4 -fPIC -D_GNU_SOURCE -DNO_PT_NYX agent.c -ldl -I. -shared -o nyx_bitcoin_agent.so)
 
 # Remove polluted directories so we don't prematurely fail.
-rm -r /tmp/fuzzsharedir
-rm -r /tmp/out
+rm -rf /tmp/fuzzsharedir
+rm -rf /tmp/out
 
 # Create and populate the share directory.
 mkdir /tmp/fuzzsharedir
-(cd src && python3 ./create_sharedir.py --dir=/tmp/fuzzsharedir --target=cmpctblock --binary=build_fuzz/bin/fuzz)
+(cd src && python3 ./create_sharedir.py --sharedir=/tmp/fuzzsharedir --target=cmpctblock --binary=build_fuzz/bin/fuzz)
 
 # Build nyx tools
 # TODO: Currently the script assumes nyx tools are built.
