@@ -38,7 +38,7 @@ python3 $1/nyx_mode/packer/packer/nyx_config_gen.py /tmp/fuzzsharedir Kernel -m 
 
 # Copy over the fuzz binary and nyx_bitcoin_agent.so
 cp bitcoin/build_fuzz/bin/fuzz /tmp/fuzzsharedir
-cp nyx_bitcoin_agent.so /tmp/fuzzsharedir
+cp src/nyx_bitcoin_agent.so /tmp/fuzzsharedir
 
 # TODO: Sample entry to /tmp/in instead of assuming existence.
 AFL_PATH=$1 afl-fuzz -X -i /tmp/in -o /tmp/out -- /tmp/fuzzshared
