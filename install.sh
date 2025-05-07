@@ -41,4 +41,4 @@ cp bitcoin/build_fuzz/bin/fuzz /tmp/fuzzsharedir
 cp src/nyx_bitcoin_agent.so /tmp/fuzzsharedir
 
 # TODO: Sample entry to /tmp/in instead of assuming existence.
-AFL_PATH=$1 afl-fuzz -X -i /tmp/in -o /tmp/out -- /tmp/fuzzshared
+AFL_PATH=$1 afl-fuzz -X -i /tmp/in -o /tmp/out -- /tmp/fuzzsharedir
