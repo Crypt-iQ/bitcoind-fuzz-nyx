@@ -31,7 +31,7 @@ mkdir /tmp/fuzzsharedir
 # Build nyx tools
 # TODO: Currently the script assumes nyx tools are built.
 
-# Copy over nyx-related binaries and generate the nyx config/
+# Copy over nyx-related binaries and generate the nyx config.
 cp $1/nyx_mode/packer/packer/linux_x86_64-userspace/bin64/* /tmp/fuzzsharedir
 python3 $1/nyx_mode/packer/packer/nyx_config_gen.py /tmp/fuzzsharedir Kernel -m 4096
 
