@@ -11,7 +11,7 @@ export LD=$1/afl-clang-fast
 
 # Fetch the remote bitcoin branch and build it.
 git clone https://github.com/$2/bitcoin -b $3 --single-branch
-(cd bitcoin && cmake -B build_fuzz -DBUILD_FOR_FUZZING=ON -DAPPEND_CPPFLAGS="-DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION -DSNAPSHOT_FUZZ" && cmake --build build_fuzz -j16)
+(cd bitcoin && git apply ../target-patches/remove-fcf-protection.patch && cmake -B build_fuzz -DBUILD_FOR_FUZZING=ON -DAPPEND_CPPFLAGS="-DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION -DSNAPSHOT_FUZZ" && cmake --build build_fuzz -j16)
 
 export CC=
 export CXX=
